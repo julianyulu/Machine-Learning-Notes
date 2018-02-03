@@ -10,10 +10,23 @@ Collection of my hand-written notes and lectures pdfs while taking *Coursea* cou
   - Logistic regression
   - Regularization 
 + Week 4
-  - In progress ...
+  - Neural networks and representation
++ Week 5
+  - Neural networks learning 
++ Week 6
+  - Evaluate a learning algorithm 
++ Week 7 
+  - Support vector machines (SVM)
++ Week 8 
+  - Unsupervised learning 
+  - Clustering
+  - Principal Component Analyzation (PCA)
++ Week 9
+  - In progress ... 
+  
   
 # Creation  
 NOTABILITY Version 7.2 by &copy Ginger Labs, Inc. 
 
 # Last update  
-Dec. 20, 2017
+Feb. 03, 2018
