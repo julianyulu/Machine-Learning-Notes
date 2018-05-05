@@ -93,7 +93,9 @@ Collection of my hand-written notes and lectures pdfs while taking *Coursea* cou
   - Sliding window detection 
   - Artifical data synthesis 
   - Ceiling Analysis 
-  
+
+
+
 # Practical Notes  
 In this section I'll summarize a few important points when applying machine learning in real coding precedure, such as the importance of standardize features in some situiation, as well as normalize samples in some other situations. These practical experience are from exercises on [DataCamp](http://datacamp.com/) and [Udacity](https://www.udacity.com/). More summaries will be added as the learning goes.  
 
@@ -110,7 +112,10 @@ As known to all, clustering is a unsupervised learning method based on minimizin
 
 The above solution could lead to huge imporvement for clustering.  
 
-
+## Decide the number of clusters (unsupervised learning)  
+There are always the case when perforing clustering on samples but one doesn't know how many groups to cluster into, due to the nature of unsupervised learning. While there are two main methods that clustering can be perfomed, there are different ways to decide on the number of result clusters:  
++ KMeans: "elbow" on initia vs n_clusters plot, e.g. model.initia\_ after fit model using sklearn.cluster.KMeans. Where initia is "Sum of squared distances of samples to their closest cluster center" (sklearn.cluster.KMeans).
++ Hierarchical clustering: plot dendrogram and make decision on the maximum distance. e.g. use linkage, dendrogram and fcluster from scipy.cluster.hierarchical.  
 
 
 # Creation  
