@@ -117,6 +117,13 @@ There are always the case when perforing clustering on samples but one doesn't k
 + KMeans: "elbow" on initia vs n_clusters plot, e.g. model.initia\_ after fit model using sklearn.cluster.KMeans. Where initia is "Sum of squared distances of samples to their closest cluster center" (sklearn.cluster.KMeans).
 + Hierarchical clustering: plot dendrogram and make decision on the maximum distance. e.g. use linkage, dendrogram and fcluster from scipy.cluster.hierarchical.  
 
+## PCA: decide the number of principal components
+When performing PCA for dimentionality reduction, one of the key steps is to make decision of the number of principal components. The underlie principle of PCA is that it rotates and shifts the feature space to find the principle axis which explains the maximal variance in data. Due to this feature, as similar to clustering, one has to take care of the variance in the feature space. Also note that PCA does not do feature selection as Lasso or tree model. The way to make decision on how many principal components is to make the bar plot of "explained variance" vs "pca feature", and choose the features that explains large portion of the variance. By doing this, one actually discovers the "intrinsic dimension of the data".  
+
+
+## Visualizing high dimential data using t-SNE  
+High dimentional data is usually hard to visualize, expecially for unsupervised learning. PCA is on option, while another option t-SNE (t distrubuted stocastic neighbor embedding) can map high dementional data to 2D space while approximately preserves the nearness of data. e.g. using TSNE from sklearn.maniford.  
+
 
 # Creation  
 2017.12.15 - 2018.05.05  
