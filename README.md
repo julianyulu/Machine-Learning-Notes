@@ -94,13 +94,31 @@ Collection of my hand-written notes and lectures pdfs while taking *Coursea* cou
   - Artifical data synthesis 
   - Ceiling Analysis 
   
+# Practical Notes  
+In this section I'll summarize a few important points when applying machine learning in real coding precedure, such as the importance of standardize features in some situiation, as well as normalize samples in some other situations. These practical experience are from exercises on [DataCamp](http://datacamp.com/) and [Udacity](https://www.udacity.com/). More summaries will be added as the learning goes.  
+
+## Improve performance of clustering (unsupervised learning)  
+As known to all, clustering is a unsupervised learning method based on minimizing the total initia for clusters, with given the number of clusters. Importantly, one has to realize that there are two situations that could lead to poor performance by clustering method (e.g. KMeans) if not taken care of:
++ Case 1: When many features are not on the same scale, e.g. 10 people v.s. 1000000 dollars. 
++ Case 2: When there is large variance between samples while only the trends are of interest, e.g. stock price of different companies over the years.  
+
+**Reason that the above two case matters**: the reason roots in "Larger variance makes bigger influence".  
+
+**Solution to case 1**: to reduce the impact of features with large variance, standardize the feature. Each feature is normalized to their standard deviation after substracting their mean, e.g. *StandardScaler* in *sklearn.preprocessing*.  
+
+**Solution to case 2**: this is not widely known, one needs to normalize samples. Each sample (i.e. each row of the data matrix) with at least one non zero component is rescaled independently of other samples so that its norm (l1 or l2) equals one. Note that this works for samples, compare to *case 1* which works for features. e.g. *Normalizer* in *sklearn.preprocessing*.  
+
+The above solution could lead to huge imporvement for clustering.  
+
+
+
 
 # Creation  
-2017.12.15 - 2018.02.18  
+2017.12.15 - 2018.05.05  
 NOTABILITY Version 7.2 by &copy Ginger Labs, Inc.   
 
 # Last update  
-Feb. 18, 2018  
+May. 05, 2018  
 
 # Claim of rights   
 All original lecture content and slids copy rights belongs to Andrew Ng, the lecture notes and and summarization are based on the lecture contents and free to use and distribute according to GPL.  
