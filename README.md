@@ -5,8 +5,24 @@ Resource are mostly from online course  platforms like [DataCamp](http://datacam
 
 # Table of contents  
 ----  
-+ [Machine Leanring Notes from Andrew Ng Coursera Class](# Machine-Learning-Notes)
-+ [Pratical Tips in Applying Machine Learning Algorithms](# Pratical-Tips-in-Applying-Machine-Learning-Algorithms)
+
+- [Machine Learning Notes](#machine-learning-notes)
+- [Pratical Tips in Applying Machine Learning Algorithms](#pratical-tips-in-applying-machine-learning-algorithms)
+  * [Feature pre-processing and feature generation](#feature-pre-processing-and-feature-generation)
+    + [Feature preprocessing](#feature-preprocessing)
+    + [Feature generation](#feature-generation)
+  * [Dealing with missing values](#dealing-with-missing-values)
+  * [Feature extraction from text and images](#feature-extraction-from-text-and-images)
+    + [Text features](#text-features)
+    + [Images](#images)
+  * [Improve performance of clustering (unsupervised learning)](#improve-performance-of-clustering--unsupervised-learning-)
+  * [Decide the number of clusters (unsupervised learning)](#decide-the-number-of-clusters--unsupervised-learning-)
+  * [PCA: decide the number of principal components](#pca--decide-the-number-of-principal-components)
+  * [Visualizing high dimential data using t-SNE](#visualizing-high-dimential-data-using-t-sne)
+- [Creation](#creation)
+- [Last update](#last-update)
+- [Claim of rights](#claim-of-rights)
+
 
 
 # Machine Learning Notes 
@@ -110,13 +126,6 @@ Hard-written notes and Lecture pdfs from Machine Learning course by Andrew Ng on
 # Pratical Tips in Applying Machine Learning Algorithms  
 ----  
 In this section I'll summarize a few important points when applying machine learning in real coding precedure, such as the importance of standardize features in some situiation, as well as normalize samples in some other situations. These practical experience are from exercises on [DataCamp](http://datacamp.com/), [Coursera](http://coursera.org/) and [Udacity](https://www.udacity.com/). More summaries will be added as the learning goes.  
-
-+ [Feature pre-processing and feature generation](#Feature pre-processing and feature generation)
-+ [Dealing with missing values](#Dealing with missing values)
-+ [Feature extraction from text and images](#Feature extraction from text and images)
-+ [Improve performance of clustering](#Improve performance of clustering (unsupervised learning)
-
-
 
 ## Feature pre-processing and feature generation  
 ----  
