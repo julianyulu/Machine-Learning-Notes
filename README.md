@@ -1,8 +1,18 @@
 # Machine-Learning-Notes
 ----  
-Collection of my hand-written notes and lectures pdfs while taking *Coursea* course *Machine Learning* by **Andrew Ng**  
-# Summary of contents  
+Collection of my hand-written notes, lectures pdfs, and tips for applying ML in problem solving.   
+Resource are mostly from online course  platforms like [DataCamp](http://datacamp.com/), [Coursera](http://coursera.org/) and [Udacity](https://www.udacity.com/).  
+
+# Table of contents  
 ----  
++ [Machine Leanring Notes from Andrew Ng Coursera Class](#Machine Learning Notes)
++ [Pratical Tips in Applying Machine Learning Algorithms](#Pratical Tips in Applying Machine Learning Algorithms)
+
+
+# Machine Learning Notes 
+----  
+Hard-written notes and Lecture pdfs from Machine Learning course by Andrew Ng on Coursera.  
+
 + [Week1: Linear regression with one variable](https://github.com/SuperYuLu/Machine-Learning-Notes/blob/master/HandWrittenNotes/WEEK1-Linear%20Regression%20With%20One%20Variable.pdf)  
   - Machine learning defination  
   - Supervised / Unsupervised Learning  
@@ -97,11 +107,18 @@ Collection of my hand-written notes and lectures pdfs while taking *Coursea* cou
 
 
 
-# Practical Notes  
+# Pratical Tips in Applying Machine Learning Algorithms  
 ----  
 In this section I'll summarize a few important points when applying machine learning in real coding precedure, such as the importance of standardize features in some situiation, as well as normalize samples in some other situations. These practical experience are from exercises on [DataCamp](http://datacamp.com/), [Coursera](http://coursera.org/) and [Udacity](https://www.udacity.com/). More summaries will be added as the learning goes.  
 
-## Importance of feature pre-processing and feature generation  
++ [Feature pre-processing and feature generation](#Feature pre-processing and feature generation)
++ [Dealing with missing values](#Dealing with missing values)
++ [Feature extraction from text and images](#Feature extraction from text and images)
++ [Improve performance of clustering](#Improve performance of clustering (unsupervised learning)
+
+
+
+## Feature pre-processing and feature generation  
 ----  
 Source: Coursera "How to win a data science competition: learn from to kagglers  
 ### Feature preprocessing 
@@ -113,6 +130,7 @@ Source: Coursera "How to win a data science competition: learn from to kagglers
 	- StandardScaler -> to 0 mean and 1 std 
 	- Rand -> set spaces between sorted values to be equal
 	- np.log(1 + x) or np.sqrt(1 + x) 
+  - Consider outliers and and miss valuses (discussed below) 
 	
 + Categorical and ordinal feature
   -Oridinal feature: categorical features that are sorted in some meaningful order.  
@@ -137,6 +155,65 @@ Feature generation is powered by:
 + Prior knowledge 
 + Exploratory Data Analysis (EDA)  
 
+
+## Dealing with missing values  
+----  
+
+Source: Coursera "How to win a data science competition: learn from to kagglers  
+A few fact need to know about missing values:  
+
++ Missing values are usually labeled: NA, None, N/A
++ Missing values can be hidden: -1 or sigularities 
++ Histgram can be helpful to find missing values 
+
+Be very careful when dealing missing values, miss handling can screw up the featue !   
+Usually, **avoid filling nans before feature generation **  
+Ways to deal with missing values  
++ Fillna approach
+  - fill with numbers out of feature range, e.g. -1, -999, etc. *Helpful for trees to treat missing values in a seperate way*
+  - mean, median. *Can be beneficial to simple non-linear models and NN, but trees may suffer.*  
+  - Reconstruct value:
+	- In timeseries: 
++ isnull feature: 
+  - Create new feature column isnull to indicate value missing or not
+  - Can help tree based models and NN, but adds extra data
++ Xgboost can handle NaNs directly  
+
+Useful Resources:  
++ [Preprocessing using Scikit-learn](http://scikit-learn.org/stable/modules/preprocessing.html)
++ [Discover feature engineering, how to engineer features and how to get good at it](https://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/)
++ [Quora: What are some best practices in feature engineering](https://www.quora.com/What-are-some-best-practices-in-Feature-Engineering)
+
+## Feature extraction from text and images  
+----  
+### Text features 
+The underlying idea a text feature extraction is: Text --> Vectors  
+Preprocessing and post-processing can be helpful. 
++ Pre-processing
+  - Lowercase 
+  - Lemmatization
+  - Stemming
+  - Stopwords 
+  
++ Bag of words
+  
++ N-grams 
+  
++ Embeddings (~ word2Vec)  
+
++ Post-processing
+  - Usually needs post-processing for modles depend on scalings, e.g. KNN, non-tree numerical model, NN
+  - Post-processing aim: boost importantce of more related features while decreasing less related features
+  - Post-processing methods: Term-Frequency (TF), Inverse Document Frequency (iDF), TFiDF, 
+
+### Images   
+
+Using pre-trained models is better than train the model when sample size is small. There are pre-trained models in [Keras](https://keras.io/applications/)  
+
+
+Useful Resources:  
++ [Imaging classification with a pre-trained deep neural network](https://www.kernix.com/blog/image-classification-with-a-pre-trained-deep-neural-network_p11)
++ [Introduction to Word Embedding Models with Word2Vec](https://taylorwhitten.github.io/blog/word2vec)  
 
 
 ## Improve performance of clustering (unsupervised learning)  
