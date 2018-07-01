@@ -114,13 +114,29 @@ Source: Coursera "How to win a data science competition: learn from to kagglers
 	- Rand -> set spaces between sorted values to be equal
 	- np.log(1 + x) or np.sqrt(1 + x) 
 	
-+ Categorical feature
-  - One hot encoding 
-  - Sigmoid encoding 
++ Categorical and ordinal feature
+  -Oridinal feature: categorical features that are sorted in some meaningful order.  
+  - One hot encoding: often used for non-tree based models
+  - Label encoding: maps categories to numbers w/o extra numerical handling
+  - Frequency encoding: maps categories to their appearing frequencies in the data 
+  - Label and frequency encoding are ofen used for tree based 
+  - Interation between categorical features: two individual categorical featureas A and B can be treated as a 2D feature, can help linear models and KNN
+  
++ Datetime features 
+  - Can generate features like: periodicity, time since, difference between date
+
++ Cooridinates  
+  - Usually additional data will help
+  - Can be used to generate new features like distances, raidus
+  - Interesting to study centers of clusters
+  - May consider rotated cooridinates or other reference frames
+  
+  
 ### Feature generation  
 Feature generation is powered by:  
-+ Pior knowledge 
++ Prior knowledge 
 + Exploratory Data Analysis (EDA)  
+
 
 
 ## Improve performance of clustering (unsupervised learning)  
