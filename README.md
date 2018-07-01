@@ -2,6 +2,7 @@
 ----  
 Collection of my hand-written notes and lectures pdfs while taking *Coursea* course *Machine Learning* by **Andrew Ng**  
 # Summary of contents  
+----  
 + [Week1: Linear regression with one variable](https://github.com/SuperYuLu/Machine-Learning-Notes/blob/master/HandWrittenNotes/WEEK1-Linear%20Regression%20With%20One%20Variable.pdf)  
   - Machine learning defination  
   - Supervised / Unsupervised Learning  
@@ -97,9 +98,33 @@ Collection of my hand-written notes and lectures pdfs while taking *Coursea* cou
 
 
 # Practical Notes  
-In this section I'll summarize a few important points when applying machine learning in real coding precedure, such as the importance of standardize features in some situiation, as well as normalize samples in some other situations. These practical experience are from exercises on [DataCamp](http://datacamp.com/) and [Udacity](https://www.udacity.com/). More summaries will be added as the learning goes.  
+----  
+In this section I'll summarize a few important points when applying machine learning in real coding precedure, such as the importance of standardize features in some situiation, as well as normalize samples in some other situations. These practical experience are from exercises on [DataCamp](http://datacamp.com/), [Coursera](http://coursera.org/) and [Udacity](https://www.udacity.com/). More summaries will be added as the learning goes.  
+
+## Importance of feature pre-processing and feature generation  
+----  
+Source: Coursera "How to win a data science competition: learn from to kagglers  
+### Feature preprocessing 
++ Numeric feature 
+  - Tree based method doesn't depend on scaling 
+  - Non-tree based models hugely depend on scaling
+  - Most often used preprocessing methods:
+	- MinMaxScaler -> to [0, 1]
+	- StandardScaler -> to 0 mean and 1 std 
+	- Rand -> set spaces between sorted values to be equal
+	- np.log(1 + x) or np.sqrt(1 + x) 
+	
++ Categorical feature
+  - One hot encoding 
+  - Sigmoid encoding 
+### Feature generation  
+Feature generation is powered by:  
++ Pior knowledge 
++ Exploratory Data Analysis (EDA)  
+
 
 ## Improve performance of clustering (unsupervised learning)  
+----  
 As known to all, clustering is a unsupervised learning method based on minimizing the total initia for clusters, with given the number of clusters. Importantly, one has to realize that there are two situations that could lead to poor performance by clustering method (e.g. KMeans) if not taken care of:
 + Case 1: When many features are not on the same scale, e.g. 10 people v.s. 1000000 dollars. 
 + Case 2: When there is large variance between samples while only the trends are of interest, e.g. stock price of different companies over the years.  
@@ -113,15 +138,18 @@ As known to all, clustering is a unsupervised learning method based on minimizin
 The above solution could lead to huge imporvement for clustering.  
 
 ## Decide the number of clusters (unsupervised learning)  
+----  
 There are always the case when perforing clustering on samples but one doesn't know how many groups to cluster into, due to the nature of unsupervised learning. While there are two main methods that clustering can be perfomed, there are different ways to decide on the number of result clusters:  
 + KMeans: "elbow" on initia vs n_clusters plot, e.g. model.initia\_ after fit model using sklearn.cluster.KMeans. Where initia is "Sum of squared distances of samples to their closest cluster center" (sklearn.cluster.KMeans).
 + Hierarchical clustering: plot dendrogram and make decision on the maximum distance. e.g. use linkage, dendrogram and fcluster from scipy.cluster.hierarchical.  
 
-## PCA: decide the number of principal components
+## PCA: decide the number of principal components  
+----  
 When performing PCA for dimentionality reduction, one of the key steps is to make decision of the number of principal components. The underlie principle of PCA is that it rotates and shifts the feature space to find the principle axis which explains the maximal variance in data. Due to this feature, as similar to clustering, one has to take care of the variance in the feature space. Also note that PCA does not do feature selection as Lasso or tree model. The way to make decision on how many principal components is to make the bar plot of "explained variance" vs "pca feature", and choose the features that explains large portion of the variance. By doing this, one actually discovers the "intrinsic dimension of the data".  
 
 
 ## Visualizing high dimential data using t-SNE  
+----  
 High dimentional data is usually hard to visualize, expecially for unsupervised learning. PCA is on option, while another option t-SNE (t distrubuted stocastic neighbor embedding) can map high dementional data to 2D space while approximately preserves the nearness of data. e.g. using TSNE from sklearn.maniford.  
 
 
@@ -130,7 +158,7 @@ High dimentional data is usually hard to visualize, expecially for unsupervised 
 NOTABILITY Version 7.2 by &copy Ginger Labs, Inc.   
 
 # Last update  
-May. 05, 2018  
+July. 01, 2018  
 
 # Claim of rights   
 All original lecture content and slids copy rights belongs to Andrew Ng, the lecture notes and and summarization are based on the lecture contents and free to use and distribute according to GPL.  
