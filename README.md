@@ -5,8 +5,8 @@ Resource are mostly from online course  platforms like [DataCamp](http://datacam
 
 # Table of contents  
 ----  
-+ [Machine Leanring Notes from Andrew Ng Coursera Class](#Machine Learning Notes)
-+ [Pratical Tips in Applying Machine Learning Algorithms](#Pratical Tips in Applying Machine Learning Algorithms)
++ [Machine Leanring Notes from Andrew Ng Coursera Class](# Machine-Learning-Notes)
++ [Pratical Tips in Applying Machine Learning Algorithms](# Pratical-Tips-in-Applying-Machine-Learning-Algorithms)
 
 
 # Machine Learning Notes 
