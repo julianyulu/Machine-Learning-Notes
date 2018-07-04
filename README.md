@@ -127,6 +127,35 @@ Hard-written notes and Lecture pdfs from Machine Learning course by Andrew Ng on
 ----  
 In this section I'll summarize a few important points when applying machine learning in real coding precedure, such as the importance of standardize features in some situiation, as well as normalize samples in some other situations. These practical experience are from exercises on [DataCamp](http://datacamp.com/), [Coursera](http://coursera.org/) and [Udacity](https://www.udacity.com/). More summaries will be added as the learning goes.  
 
+## Exploratory Data Analysis (EDA)  
+----  
+EDA helps to get comfortable with data and get intuitive of it.
+### Preliminary steps of EDA  
++ Get domain knowledge: helps to deeper understand of the problem
++ Check if the data is intuitive: check if agrees with domain knowledge
++ Understand how the data is generated: crucial to set up a proper validation
+
+### Visualization tools
++ Explore individual features 
+  - Histogram 
+  - Plot (index vs value)
+  - Statistics 
++ Explore feature relations
+  - Pairs
+	- Scatter plot, scatter matrix 
+	- Corrplot
+  - Groups
+	- Corrplot + clustering (rearrange cols and rows in corr-matrix to find feature groups)
+	- plot(index vs feature statistics) 
+
+### Feature cleaning 
++ Check duplicated cols / rows in both training and test set
++ Check meaningless cols in both training and test set 
++ Check uncovered cols in test set by training set
+
+### Check for data leaks (coverd by later section)
+
+
 ## Feature pre-processing and feature generation  
 ----  
 Source: Coursera "How to win a data science competition: learn from to kagglers  
@@ -223,6 +252,65 @@ Using pre-trained models is better than train the model when sample size is smal
 Useful Resources:  
 + [Imaging classification with a pre-trained deep neural network](https://www.kernix.com/blog/image-classification-with-a-pre-trained-deep-neural-network_p11)
 + [Introduction to Word Embedding Models with Word2Vec](https://taylorwhitten.github.io/blog/word2vec)  
+
+## Validation Strategies  
+----  
+
+### Main cross-validation strategies:  
+
++ Holdout: if data is homogeneous(can findout by different fold's score in K-Fold CV), to save on computation power. 
++ KFold: large data sets 
++ Leave-One-Out (LOOCV): for small data sets
+
+Stratification: preserve the same target distribution over different folds,  is extremely useful / important when:  
+
++ Have small data set 
++ Un-even distributed categories 
++ Multi-class classfication problems
+
+Also note that: Overfitting in training set doesn't necessary mean overfitting in test set. 
+
+### Split strategies  
+Split should always try to mimic train-test split by the data provider !  
+Different splitting startegies can differ significantly, general split methods are:  
+
++ Random, rowwise: rows are indepedent
++ Timewise: time moving window
++ By id: clustering
+
+### Validation problems  
+Possible problems may encounter during the submission stage:  
+
++ LeaderBoard score is consistently higher / lower that validations score 
++ LeaderBoard score is not correlated with validation score at all
+
+The reason roots in we didn't mimic train-test split of the data by the provider. In specific:
++ Overfit
++ We may already have quite different scores in Kfold CV 
++ too little data in public leaderboard 
++ incorrect train/test split
++ train and test data are form different distributions --> Leader board probing, e.g. calc mean for the taining and test dataset, shift predictions by the mean difference.
+
+### Expect LeaderBoard shuffle  
+Reasons:  
++ Randomness 
++ Little amount of data
++ Different public private test distributions 
+
+
+## Data Leakadge
+----  
+Data leaks are the mistakes that the provider included important unexpected information about the final target. It can even make the competition meaningless, one has to treat it in the right way, depend what one want to achieve. 
+
+There are different kinds of data leaks: 
++ Leaks in time seris
+  - Split should be done on time: train/test may contain some future data that we are trying to predict 
+
++ Unexpected information
+  - Meta data: e.g. image creation date 
+  - Information in IDs: may be hashing from the targeted value
+  - Row order
+
 
 
 ## Improve performance of clustering (unsupervised learning)  
